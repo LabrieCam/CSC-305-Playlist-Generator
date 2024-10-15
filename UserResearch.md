@@ -55,10 +55,13 @@ We will have to observe actualy user generated playlists, and determine what mak
 
 ### Observation 5: Nitish Salvi
 The majority of our participants stated that removing ads would be the use of a premium feature for this app. 
+The name 'Amplify' was a popular name for the product.
 
 **Supporting Data:**
 - 91.2% of respondents said they would pay from a premium feature to remove ads from the app.
 - Only 1 respondent would **not** pay for a premium feature.
+- 50% of respondents chose the name 'Amplify' as the product name.
 
 **Team Action (if any):**
 We should observe ways to properly integrate ads in order to retain as many users as possible and determine whether or not a user will want a premium feature to remove ads.
+Research apps with similar names to ensure uniqueness.
