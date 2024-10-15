@@ -24,3 +24,20 @@ It is clear from our research that it will be very important that the app can ge
 
 **Team Action (if any):**  
 The team will have to go through a lot of testing to ensure that we generate playlists users will enjoy.
+
+### Observation 3: Venthai Mao
+**Observation Statement:**
+Features such editing generated playlists and song recommendations are by far the most interested features ranked by users from the survey.
+
+**Supporting Data:**  
+- 79.3% is the highest score for "songs recommendation" feature.
+- 72.4% is the 2nd highest score for editing generated playlists feature.
+
+Currently 3 other features are tied with eachother (tied 51.7% score): 
+- Ability to copy a playlist to another streaming service.
+- Daily playlists based on specified interests.
+- Ability to fully make your own playlist.
+
+**Team Action (if any):**  
+We listed 9 features, the team will most likely have to cut down to top features that users want the most.
+
