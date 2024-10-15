@@ -41,3 +41,13 @@ Currently 3 other features are tied with eachother (tied 51.7% score):
 **Team Action (if any):**  
 We listed 9 features, the team will most likely have to shorten least wanted features and focus on top ranked features that users want the most.
 
+
+### Observation 4: Luca Nero
+**Observation Statement:**
+Most of our participants make their own playlists, so we will have to be careful in our attempt to mimic real personalization within playlist generation.
+
+**Supporting Data:**  
+75.86% of the respondents said they make their own playlists.
+
+**Team Action (if any):**  
+We will have to observe actualy user generated playlists, and determine what makes the average person add a song to a playlist.
