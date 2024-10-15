@@ -89,7 +89,7 @@ We hereby agree to follow this code of conduct, and fully understand the consequ
 
 **Signed by**:
 1. Luca Nero
-2. 
+2. Cameron Labrie
 3. 
 4. 
 5. 
