@@ -52,3 +52,13 @@ Most of our participants make their own playlists, so we will have to be careful
 
 **Team Action (if any):**  
 We will have to observe actualy user generated playlists, and determine what makes the average person add a song to a playlist.
+
+### Observation 5: Nitish Salvi
+The majority of our participants stated that removing ads would be the use of a premium feature for this app. 
+
+**Supporting Data:**
+- 91.2% of respondents said they would pay from a premium feature to remove ads from the app.
+- Only 1 respondent would **not** pay for a premium feature.
+
+**Team Action (if any):**
+We should observe ways to properly integrate ads in order to retain as many users as possible and determine whether or not a user will want a premium feature to remove ads.
