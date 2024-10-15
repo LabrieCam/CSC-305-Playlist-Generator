@@ -39,5 +39,5 @@ Currently 3 other features are tied with eachother (tied 51.7% score):
 - Ability to fully make your own playlist.
 
 **Team Action (if any):**  
-We listed 9 features, the team will most likely have to cut down to top features that users want the most.
+We listed 9 features, the team will most likely have to shorten least wanted features and focus on top ranked features that users want the most.
 
