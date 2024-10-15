@@ -81,3 +81,20 @@ For answers to common questions about this code of conduct, see the FAQ at [http
 [Mozilla CoC]: https://github.com/mozilla/diversity
 [FAQ]: https://www.contributor-covenant.org/faq
 [translations]: https://www.contributor-covenant.org/translations
+
+
+## Signatures
+
+We hereby agree to follow this code of conduct, and fully understand the consequences that come with failure to comply with group rules.
+
+**Signed by**:
+1. Luca Nero
+2. 
+3. 
+4. 
+5. 
+
+
+
+
+
