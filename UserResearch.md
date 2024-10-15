@@ -47,7 +47,8 @@ We listed 9 features, the team will most likely have to shorten least wanted fea
 Most of our participants make their own playlists, so we will have to be careful in our attempt to mimic real personalization within playlist generation.
 
 **Supporting Data:**  
-75.86% of the respondents said they make their own playlists.
+- 75.86% of the respondents said they make their own playlists.
+- Some of those who did **not** make their own playlists also mentioned that they relied on auto-generated playlists, so they may not be interested in our application at all.
 
 **Team Action (if any):**  
 We will have to observe actualy user generated playlists, and determine what makes the average person add a song to a playlist.
