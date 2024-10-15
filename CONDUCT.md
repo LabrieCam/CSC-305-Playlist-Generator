@@ -90,7 +90,7 @@ We hereby agree to follow this code of conduct, and fully understand the consequ
 **Signed by**:
 1. Luca Nero
 2. Cameron Labrie
-3. 
+3. Nitish Salvi
 4. 
 5. 
 
