@@ -92,7 +92,7 @@ We hereby agree to follow this code of conduct, and fully understand the consequ
 2. Cameron Labrie
 3. Nitish Salvi
 4. Andrew Langille
-5. 
+5. Venthai Mao
 
 
 
