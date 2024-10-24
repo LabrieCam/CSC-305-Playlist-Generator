@@ -71,6 +71,8 @@ CTR -
 
 - **Implement tracking** for how many times a playlist is opened before being deleted
 
+# Metrics
+
 **Metric 1 - User Happiness - Playlist Regeneration** - User happiness for our  playlist generation will be measure by the amount of times the regenrate playlist button is pressed. For this metric a score of under 25% would be a good rating.
 
 **Metric 2**
