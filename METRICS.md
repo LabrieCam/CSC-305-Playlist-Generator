@@ -1,3 +1,5 @@
+https://docs.google.com/presentation/d/1QJu48IAp0Rrs23rdjdxlxurDEV-wFsawNB9RD40N7Gc/edit?usp=sharing 
+
 # Net Promoter Score (NPS) Process
 
 - **Periodically send out NPS surveys** to users, especially after key interactions like playlist generation or subscription renewal.
@@ -52,6 +54,29 @@ DAU -
 - **Analyze DAU** in conjunction with other engagement metrics to get a comprehensive view of user activity.
     
 Retention - 
-CTR - how to collect
+# Retention Measurement process
 
-https://docs.google.com/presentation/d/1QJu48IAp0Rrs23rdjdxlxurDEV-wFsawNB9RD40N7Gc/edit?usp=sharing 
+- **Implement Login Tracking** within app to track user retention by month
+  
+- **Implement Tracking** to see users who have used the app consistently for over a long period of time (6 months- 1 year)
+  
+- **Implement Tracking** user playlist generation and playlist saving
+
+CTR -
+# Click Through Rate (CTR) Measurement Process
+
+- **Implement tracking** for when user logs in to a playlist is generated
+  
+- **Implement tracking** for when user logs in to a saved playlist is opened
+
+- **Implement tracking** for how many times a playlist is opened before being deleted
+
+**Metric 1 - User Happiness - Playlist Regeneration** - User happiness for our  playlist generation will be measure by the amount of times the regenrate playlist button is pressed. For this metric a score of under 25% would be a good rating.
+
+**Metric 2**
+
+**Metric 3**
+
+**Metric 4**
+
+**Metric 5**
