@@ -75,7 +75,7 @@ CTR -
 
 **Metric 1 - User Happiness - Playlist Regeneration** - User happiness for our  playlist generation will be measure by the amount of times the regenrate playlist button is pressed. For this metric a score of under 25% would be a good rating.
 
-**Metric 2**
+**Metric 2 - Engagement - Playlist Revisit Rate ** -  Measures how often users revisit and interact with their previously saved playlists, indicating ongoing engagement and interest. Target: A revisit rate of over 50% of saved playlists per month would demonstrate strong engagement with the app’s playlist feature.
 
 **Metric 3**
 
