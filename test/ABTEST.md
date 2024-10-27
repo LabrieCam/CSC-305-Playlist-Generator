@@ -32,3 +32,60 @@ Both variants will be accompanied by a user-friendly interface ensuring easy nav
 
 
 # Test 2
+
+**App Bar Positioning**
+
+### Objectives
+- **Happiness**: Collect user satisfaction ratings post-interaction (via in-app survey) related to the app's usability and app bar placement.
+- **Engagement**: Measure average time spent navigating the app during sessions.
+- **Adoption**: Track the number of playlist requests made per session based on app bar position.
+- **Retention**: Monitor return rates post-first visit to gauge which position fosters repeat usage.
+- **Task Success Rate**: Observe the percentage of users successfully completing playlist generation within their first session.
+
+---
+
+### Hypothesis
+Positioning the app bar at the bottom of the screen will increase engagement and satisfaction by providing easier navigation, particularly for one-handed use. Users may find it more intuitive, which could lead to higher satisfaction and task success rates.
+
+---
+
+### Problem Statement
+Currently, the app bar is positioned at the top, requiring users to reach for the navigation controls, which may affect their engagement and retention. Given the app's main function of playlist generation, a more accessible navigation might improve user experience, especially for quick playlist creation and exploration. By testing the app bar's position, we aim to determine whether repositioning will enhance user experience, engagement, and retention.
+
+---
+
+### Experiment
+The experiment will use Firebase's A/B testing framework to randomly assign 50% of users to:
+
+- **Variant A**: App bar positioned at the top of the screen (current design).
+- **Variant B**: App bar positioned at the bottom of the screen.
+
+All users will be part of the experiment to capture a complete view of preferences.
+
+#### Metrics to Track via Firebase Analytics:
+- **Navigation click-through rate**: Frequency of user interactions with the app bar in each position.
+- **Session duration**: Average time spent per session.
+- **User satisfaction**: Collected through in-app surveys post-experience.
+- **Playlist generation count**: Number of playlists generated per session.
+- **Task success rate**: Percentage of users generating a playlist within the first session.
+
+---
+
+### Variations
+**Variant A: Top Position App Bar**
+
+- App bar located at the top, with icons for creating and viewing playlists.
+
+
+**Variant B: Bottom Position App Bar**
+
+- App bar located at the bottom, improving accessibility for quick navigation.
+
+
+*Mockups*: Both variations will maintain a user-friendly design, with clear icons and intuitive navigation options.
+
+---
+
+### Success Criteria
+The test will be considered successful if the app bar at the bottom yields higher engagement and satisfaction according to the HEART metrics. A successful result would indicate the advantage of a more accessible app bar, potentially becoming a permanent design update to optimize user experience.
+
