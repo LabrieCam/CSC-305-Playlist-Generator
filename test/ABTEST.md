@@ -88,4 +88,46 @@ All users will be part of the experiment to capture a complete view of preferenc
 
 ### Success Criteria
 The test will be considered successful if the app bar at the bottom yields higher engagement and satisfaction according to the HEART metrics. A successful result would indicate the advantage of a more accessible app bar, potentially becoming a permanent design update to optimize user experience.
+---
+# Test 3
 
+**Genre Selection Method**
+
+### Objectives
+- **Happiness**: Gather feedback through post-session surveys on user satisfaction regarding genre selection experience.
+- **Engagement**: Track the number of playlists generated per session to see if more frequent genre selection encourages exploration.
+- **Adoption**: Count how many users create multiple playlists within a single session under each genre-selection method.
+- **Retention**: Measure return rates to assess if either genre-selection approach impacts long-term usage.
+- **Task Success Rate**: Observe the percentage of users who successfully create a playlist with their desired genre during their first session.
+
+### Hypothesis
+Allowing users to select a genre for each playlist will increase engagement and satisfaction by promoting greater personalization. By giving users more control over the genre selection, we expect users to generate more playlists tailored to specific moods or activities, which could improve their overall experience and satisfaction.
+
+### Problem Statement
+Currently, users select a single genre at login, which applies to all playlists they create in that session. While this may simplify the process, it may limit users’ ability to create varied playlists for different preferences. By experimenting with the genre selection method, we aim to understand if greater flexibility in genre choice can improve engagement, satisfaction, and retention.
+
+### Experiment
+The experiment will utilize Firebase's A/B testing framework to split users into two groups:
+
+- **Variant A**: Single genre selection at login (current design).
+- **Variant B**: Genre selection available for each playlist generated, allowing users to pick a different genre each time.
+
+All users will be included in the experiment to capture a comprehensive view of preferences and behaviors.
+
+**Metrics to Track via Firebase Analytics**:
+
+- **Playlist creation frequency**: Number of playlists generated per session under each genre-selection method.
+- **User satisfaction**: Collected through in-app surveys post-experience.
+- **Average playlists per session**: Measures playlist generation activity and any increase due to variant B.
+- **Task success rate**: Percentage of users successfully creating a playlist with their preferred genre in the first session.
+
+### Variations
+**Variant A**: Single Genre Selection at Login
+- Users choose one genre at the start of the session, which applies to all playlists created during that session.
+**Variant B**: Genre Selection for Each Playlist
+- Users can select a genre for each new playlist they create, enhancing customization for specific moods or activities.
+**Mockups**: Both variations will use a clear, streamlined interface, with intuitive options for selecting genres and creating playlists.
+
+
+### Success Criteria
+The test will be considered successful if allowing users to select a genre per playlist (Variant B) results in higher engagement and satisfaction according to the HEART metrics. A successful outcome would suggest that offering more customization options for each playlist improves the user experience and could justify implementing this as a permanent feature.
