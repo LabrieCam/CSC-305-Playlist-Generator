@@ -79,6 +79,6 @@ CTR -
 
 **Metric 3 - Adoption** - Measures how many users fully complete a profile and user registration rate, indicating that users sign up and complete the onboarding process fully. Target: Over 80% of users fully complete the onboarding process.
 
-**Metric 4**
+**Metric 4 - Retention** - Measures focus on tracking user login frequency, long-term usage, and interactions with key features like playlists. By analyzing this data, you can identify patterns, understand user behavior, and implement strategies to improve user retention over time. Target: Acheive a retention rate where over 80% of users return to the app at least once a week for the first three months after registration. 
 
 **Metric 5**
