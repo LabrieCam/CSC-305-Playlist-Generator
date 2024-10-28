@@ -128,6 +128,59 @@ All users will be included in the experiment to capture a comprehensive view of 
 - Users can select a genre for each new playlist they create, enhancing customization for specific moods or activities.
 **Mockups**: Both variations will use a clear, streamlined interface, with intuitive options for selecting genres and creating playlists.
 
+  # Test 4
+  ** Daily Playlists Pop-up **
 
+  
 ### Success Criteria
 The test will be considered successful if allowing users to select a genre per playlist (Variant B) results in higher engagement and satisfaction according to the HEART metrics. A successful outcome would suggest that offering more customization options for each playlist improves the user experience and could justify implementing this as a permanent feature.
+
+ # Test 4
+  
+  
+**Daily Playlists Pop-up**
+
+
+## Objectives
+
+- **Happiness**: Measure user satisfaction with the new daily playlists pop-up through in-app survey ratings focused on relevance and usefulness of the suggestions.
+- **Engagement**: Track the rate of interactions with the daily playlists pop-up, including views, dismissals, and playlist selections.
+- **Adoption**: Observe the frequency of playlist selections originating from the daily playlists pop-up.
+- **Retention**: Monitor whether users who interacted with the pop-up have higher return rates compared to those who did not.
+- **Task Success Rate**: Track how often users successfully select and play a playlist from the pop-up on their first interaction with it.
+
+## Hypothesis
+Adding a daily playlists pop-up will increase user engagement and satisfaction by offering timely, curated playlist suggestions, fostering higher engagement with the app. This feature aims to encourage quick playlist selection and improve retention by offering a more personalized experience.
+
+## Problem Statement
+Currently, users must search or manually generate playlists, which may discourage engagement, especially for those looking for quick music suggestions. Implementing a daily playlists pop-up could enhance user experience by offering readily available options, which may lead to improved engagement and satisfaction.
+
+## Experiment
+Using Firebase’s A/B testing framework, users will be split into two groups:
+
+- **Variant A**: No daily playlists pop-up (current design).
+- **Variant B**: New daily playlists pop-up appearing on app open, with personalized playlist suggestions for that day.
+
+The experiment will cover all users to ensure a comprehensive analysis of feature reception and usage patterns.
+
+### Metrics to Track via Firebase Analytics
+
+- **Interaction rate with pop-up**: Percentage of users who interact with the daily playlists pop-up (clicking, dismissing, or selecting a playlist).
+- **Session duration**: Average time spent per session.
+- **User satisfaction**: Collected through in-app surveys post-interaction with the pop-up.
+- **Playlist selection rate**: Frequency of playlists selected directly from the pop-up.
+- **Task success rate**: Percentage of users who select and play a playlist directly from the pop-up in their first session.
+
+## Variations
+
+- **Variant A**: No pop-up feature. Users create or search for playlists manually.
+- **Variant B**: Daily playlists pop-up displayed at the start, offering suggested playlists for quick selection.
+
+### Mockups
+Both variations will maintain an intuitive design, with clear navigation and accessible playlist options for seamless user flow.
+
+## Success Criteria
+The test will be deemed successful if the daily playlists pop-up (Variant B) significantly boosts engagement, adoption, and user satisfaction according to the HEART metrics. A positive outcome could indicate the pop-up’s effectiveness, suggesting it as a permanent addition to streamline playlist selection and elevate the user experience.
+
+
+  
