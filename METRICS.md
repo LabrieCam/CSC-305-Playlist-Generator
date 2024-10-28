@@ -81,4 +81,7 @@ CTR -
 
 **Metric 4 - Retention** - Measures focus on tracking user login frequency, long-term usage, and interactions with key features like playlists. By analyzing this data, you can identify patterns, understand user behavior, and implement strategies to improve user retention over time. Target: Acheive a retention rate where over 80% of users return to the app at least once a week for the first three months after registration. 
 
-**Metric 5**
+**Metric 5 - Task Success Rate** - Evaluates how efficiently users can complete the main tasks the app was designed for, such as generating and saving playlists. Monitoring task success rates helps ensure that users find it easy and intuitive to accomplish the app’s primary functions, like playlist generation, which in turn impacts overall user satisfaction and adoption
+
+- **Measurement Process**: Track the number of users who successfully generate and save a playlist within their first session.
+- **Target**: Aim for a task success rate of 90% or higher, indicating that the majority of users can easily and successfully complete playlist generation and other primary functions in their initial interaction with the app.
