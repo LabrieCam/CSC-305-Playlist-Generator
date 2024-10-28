@@ -182,5 +182,40 @@ Both variations will maintain an intuitive design, with clear navigation and acc
 ## Success Criteria
 The test will be deemed successful if the daily playlists pop-up (Variant B) significantly boosts engagement, adoption, and user satisfaction according to the HEART metrics. A positive outcome could indicate the pop-up’s effectiveness, suggesting it as a permanent addition to streamline playlist selection and elevate the user experience.
 
+# Test 5
+**UI Theme Changes**
+US4: Golden Path
+
+## Objectives:
+Happiness: User satisfaction ratings post-experience (via in-app survey)
+Engagement: Average time spent on the app during the session
+Adoption: Number of completed user accounts
+Retention: Return rate of users after the first visit
+Task Success Rate: Click through rate of the golden path
+
+## Hypothesis: 
+We believe that changing the UI color scheme will impact the user retention, the daily active users, and how likely they are to recommend this app to others. Users may prefer a different theme that may be more engaging or aesthetically pleasing.
+
+## Problem Statement:
+What problem are we trying to solve? Its impact? Currently, users will see a magenta color as the primary color upon launching the app. While this was a decision made by us as developers, our users may not enjoy the UI as much. We may be able to find a more engaging color scheme that will increase the average time that users spend on the app, increase user retention, and increase adoption. The other colors that can be tested are: Violet and Turquoise.
+
+## Experiment: 
+By splitting the users into three groups (A, B, C) we can implement an A/B test. Group A will be 33% of users, Group B will be 33% of users, Group C will be 34% of users. Allowing a roughly even split will give us the most accurate user feedback. 
+
+### Metric Tracking in Firebase
+Using firebase analytics, we can measure our metrics. With Happiness, we can track the NPS survey for each group and find the highest average score. For engagement, we can track session duration. For adoption, we can collect number of completed user accounts and completed playlists. Retention can be tracked by the return rate on firebase. To track TSR we can track the CTR of the golden path to see how many users generate playlists.
+
+## Variation:
+- Group A would stay Magenta, Group B would get a violet primary color theme, and Group C would get a turquoise primary color theme.
+
+### Mockups:
+The differences between each group will only be UI color theme changes. They will have clear navigation through the golden path.
+
+## Success Criteria:
+The group with the highest metric score in accordance to the HEART framework will be the most successful group. A positive outcome would be a high NPS score, suggesting that it should be the new UI theme. 
+  
+
+
+
 
   
