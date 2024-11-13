@@ -8,4 +8,4 @@ https://docs.google.com/presentation/d/16ao51LP1afa94kT3__C-mRdCEP6mivAjAMU87eQ_
  
 https://docs.google.com/presentation/d/1VSwxvjy7l9Lwz-ICRiXROQNp59ThkCl_R1lRJujfyRk/edit?usp=sharing - *US4: Playlist Generation*
  
-https://docs.google.com/presentation/d/1vDC0C7Oq-Wn-fUum1XMqnPAQDy6-IJi92RsjYqXAeiM/edit#slide=id.g2d557ef2dce_0_32
+https://docs.google.com/presentation/d/1vDC0C7Oq-Wn-fUum1XMqnPAQDy6-IJi92RsjYqXAeiM/edit#slide=id.g2d557ef2dce_0_32 - *US5: Playlist Editing*
