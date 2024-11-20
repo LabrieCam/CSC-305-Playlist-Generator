@@ -4,6 +4,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'welcome_screen_model.dart';
 export 'welcome_screen_model.dart';
 
@@ -48,7 +50,6 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Colors.white,
         body: SafeArea(
           top: true,
           child: Align(
@@ -57,26 +58,43 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  'Welcome Back',
-                  style: FlutterFlowTheme.of(context).headlineLarge.override(
-                        fontFamily: 'Inter',
-                        letterSpacing: 0.0,
-                      ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/AMPL.FY_transparent.png',
+                    width: 200.0,
+                    height: 77.0,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Opacity(
+                  opacity: 0.7,
+                  child: Text(
+                    'Welcome Back!',
+                    style: FlutterFlowTheme.of(context).headlineLarge.override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).headlineLargeFamily,
+                          color: const Color(0xFF6016F8),
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).headlineLargeFamily),
+                        ),
+                  ),
                 ),
                 Text(
-                  'Enter your credentials to login',
+                  'Enter your credentials to begin.',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                 ),
                 Container(
                   width: 352.0,
                   height: 513.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                  ),
+                  decoration: const BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -90,6 +108,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                             SizedBox(
                               width: 310.0,
                               child: TextFormField(
+                                key: const ValueKey('Login-Email_1v0m'),
                                 controller: _model.loginEmailTextController,
                                 focusNode: _model.loginEmailFocusNode,
                                 onChanged: (_) => EasyDebounce.debounce(
@@ -104,15 +123,25 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily),
                                       ),
                                   hintText: 'Email',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily),
                                       ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
@@ -143,7 +172,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   filled: true,
-                                  fillColor: const Color(0xFFE0ADE5),
+                                  fillColor: const Color(0x808C52FF),
                                   prefixIcon: const Icon(
                                     Icons.person_outline,
                                     color: Colors.black,
@@ -167,8 +196,13 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Inter',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
                                       lineHeight: 2.0,
                                     ),
                                 maxLines: null,
@@ -183,6 +217,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                             SizedBox(
                               width: 310.0,
                               child: TextFormField(
+                                key: const ValueKey('Login-Password_n3i8'),
                                 controller: _model.loginPasswordTextController,
                                 focusNode: _model.loginPasswordFocusNode,
                                 autofocus: false,
@@ -192,16 +227,26 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily),
                                       ),
                                   alignLabelWithHint: false,
                                   hintText: 'Password',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily),
                                         lineHeight: 2.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -233,9 +278,9 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   filled: true,
-                                  fillColor: const Color(0xFFE0ADE5),
+                                  fillColor: const Color(0x7F8C52FF),
                                   prefixIcon: const Icon(
-                                    Icons.menu_outlined,
+                                    Icons.lock,
                                     color: Colors.black,
                                     size: 26.0,
                                   ),
@@ -256,8 +301,13 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Inter',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
                                       lineHeight: 2.0,
                                     ),
                                 textAlign: TextAlign.start,
@@ -272,6 +322,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                         ),
                       ),
                       FFButtonWidget(
+                        key: const ValueKey('Login-Button_badq'),
                         onPressed: () async {
                           logFirebaseEvent(
                               'WELCOME_SCREEN_PAGE_Login-Button_ON_TAP');
@@ -307,21 +358,41 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                               16.0, 0.0, 16.0, 0.0),
                           iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: const Color(0xFFA11AB9),
-                          textStyle:
-                              FlutterFlowTheme.of(context).labelLarge.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
+                          color: const Color(0xFF8C52FF),
+                          textStyle: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
+                                color: Colors.white,
+                                fontSize: 20.0,
+                                letterSpacing: 0.0,
+                                shadows: [
+                                  Shadow(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    offset: const Offset(2.0, 3.0),
+                                    blurRadius: 2.0,
+                                  )
+                                ],
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleSmallFamily),
+                              ),
                           elevation: 0.0,
-                          borderRadius: BorderRadius.circular(24.0),
+                          borderRadius: BorderRadius.circular(18.0),
+                          hoverColor: const Color(0xFF2B2525),
                         ),
                       ),
                       Text(
                         'or',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
                             ),
                       ),
                       FFButtonWidget(
@@ -343,6 +414,10 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                               'ProfileSetup', context.mounted);
                         },
                         text: 'Sign in with Google',
+                        icon: const FaIcon(
+                          FontAwesomeIcons.google,
+                          size: 15.0,
+                        ),
                         options: FFButtonOptions(
                           width: 310.0,
                           height: 55.0,
@@ -351,12 +426,17 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                           iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: Colors.white,
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Inter',
-                                    color: Colors.black,
-                                    letterSpacing: 0.0,
-                                  ),
+                          textStyle: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
+                                color: Colors.black,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleSmallFamily),
+                              ),
                           elevation: 0.0,
                           borderSide: const BorderSide(
                             color: Colors.black,
@@ -377,12 +457,19 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                           context.pushNamed('ForgotPassword');
                         },
                         child: Text(
+                          key: const ValueKey('ForgotPassWord_ddwv'),
                           'Forgot Password?',
-                          style:
-                              FlutterFlowTheme.of(context).bodySmall.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodySmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodySmallFamily,
+                                color: const Color(0xFF8C52FF),
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodySmallFamily),
+                              ),
                         ),
                       ),
                       Align(
@@ -391,11 +478,16 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                             child: Text(
                           'Don\'t have an account?  ',
                           textAlign: TextAlign.start,
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
+                              ),
                         )),
                       ),
                       InkWell(
@@ -412,11 +504,17 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                         },
                         child: Text(
                           'Sign up',
-                          style:
-                              FlutterFlowTheme.of(context).bodySmall.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodySmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodySmallFamily,
+                                color: const Color(0xFF8C52FF),
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodySmallFamily),
+                              ),
                         ),
                       ),
                     ].divide(const SizedBox(height: 20.0)),

@@ -1,12 +1,25 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'p_select_model.dart';
 export 'p_select_model.dart';
 
 class PSelectWidget extends StatefulWidget {
-  const PSelectWidget({super.key});
+  const PSelectWidget({
+    super.key,
+    required this.url,
+    required this.playlistImage,
+    required this.playlistName,
+    required this.document,
+  });
+
+  final String? url;
+  final String? playlistImage;
+  final String? playlistName;
+  final PlaylistCoversRecord? document;
 
   @override
   State<PSelectWidget> createState() => _PSelectWidgetState();
@@ -40,7 +53,7 @@ class _PSelectWidgetState extends State<PSelectWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 408.0,
+      height: 442.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         boxShadow: const [
@@ -68,7 +81,7 @@ class _PSelectWidgetState extends State<PSelectWidget> {
             ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
               child: Image.network(
-                'https://picsum.photos/seed/727/600',
+                widget.playlistImage!,
                 width: 200.0,
                 height: 200.0,
                 fit: BoxFit.cover,
@@ -77,18 +90,26 @@ class _PSelectWidgetState extends State<PSelectWidget> {
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
               child: Text(
-                'Playlist Name',
+                valueOrDefault<String>(
+                  widget.playlistName,
+                  'Playlist Name',
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Inter',
+                      fontFamily:
+                          FlutterFlowTheme.of(context).headlineMediumFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).headlineMediumFamily),
                     ),
               ),
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('OpenPlaylist pressed ...');
+                onPressed: () async {
+                  logFirebaseEvent('P_SELECT_COMP_OpenPlaylist_ON_TAP');
+                  logFirebaseEvent('OpenPlaylist_launch_u_r_l');
+                  await launchURL(widget.url!);
                 },
                 text: 'Open Playlist',
                 options: FFButtonOptions(
@@ -99,8 +120,11 @@ class _PSelectWidgetState extends State<PSelectWidget> {
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: const Color(0xFFA11AB9),
                   textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelLargeFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).labelLargeFamily),
                       ),
                   elevation: 0.0,
                   borderRadius: BorderRadius.circular(24.0),
@@ -108,8 +132,10 @@ class _PSelectWidgetState extends State<PSelectWidget> {
               ),
             ),
             FFButtonWidget(
-              onPressed: () {
-                print('OpenPlaylist pressed ...');
+              onPressed: () async {
+                logFirebaseEvent('P_SELECT_COMP_OpenPlaylist_ON_TAP');
+                logFirebaseEvent('OpenPlaylist_backend_call');
+                await widget.document!.reference.delete();
               },
               text: 'Delete Playlist',
               options: FFButtonOptions(
@@ -119,8 +145,10 @@ class _PSelectWidgetState extends State<PSelectWidget> {
                 iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: const Color(0xFFB91A1D),
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                      fontFamily: 'Inter',
+                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).labelLargeFamily),
                     ),
                 elevation: 0.0,
                 borderRadius: BorderRadius.circular(24.0),

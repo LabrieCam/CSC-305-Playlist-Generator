@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'forgot_password_model.dart';
 export 'forgot_password_model.dart';
 
@@ -79,8 +80,11 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                 child: Text(
                   'Forgot Password',
                   style: FlutterFlowTheme.of(context).displayMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).displayMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).displayMediumFamily),
                       ),
                 ),
               ),
@@ -90,8 +94,11 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   'Enter the email associated \n      with your account.',
                   textAlign: TextAlign.start,
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).labelMediumFamily),
                       ),
                 ),
               ),
@@ -103,6 +110,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   child: SizedBox(
                     width: 310.0,
                     child: TextFormField(
+                      key: const ValueKey('ForgotPass-Emaill_sv41'),
                       controller: _model.forgotPassEmaillTextController,
                       focusNode: _model.forgotPassEmaillFocusNode,
                       autofocus: false,
@@ -111,14 +119,22 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                         isDense: true,
                         labelStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
                                 ),
                         hintText: 'Email',
                         hintStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
                                 ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(
@@ -156,13 +172,17 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           size: 30.0,
                         ),
                         suffixIcon: const FaIcon(
+                          key: ValueKey('ForgotPass-Emaill_sv41'),
                           FontAwesomeIcons.ellipsisV,
                           size: 30.0,
                         ),
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
                             letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
                             lineHeight: 2.0,
                           ),
                       textAlign: TextAlign.start,
@@ -177,6 +197,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
               Align(
                 alignment: const AlignmentDirectional(0.0, 0.0),
                 child: FFButtonWidget(
+                  key: const ValueKey('RecoverPass_zrcs'),
                   onPressed: () async {
                     logFirebaseEvent('FORGOT_PASSWORD_PAGE_RecoverPass_ON_TAP');
                     logFirebaseEvent('RecoverPass_auth');
@@ -205,8 +226,11 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: const Color(0xFFA11AB9),
                     textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                          fontFamily: 'Inter',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).labelLargeFamily,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).labelLargeFamily),
                         ),
                     elevation: 0.0,
                     borderRadius: BorderRadius.circular(24.0),

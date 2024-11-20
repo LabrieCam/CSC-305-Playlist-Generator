@@ -75,6 +75,11 @@ class UsersRecord extends FirestoreRecord {
   String get photoUrl => _photoUrl ?? '';
   bool hasPhotoUrl() => _photoUrl != null;
 
+  // "daily_created" field.
+  bool? _dailyCreated;
+  bool get dailyCreated => _dailyCreated ?? false;
+  bool hasDailyCreated() => _dailyCreated != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -88,6 +93,7 @@ class UsersRecord extends FirestoreRecord {
     _favGenre = snapshotData['fav_genre'] as String?;
     _birthday = snapshotData['birthday'] as String?;
     _photoUrl = snapshotData['photo_url'] as String?;
+    _dailyCreated = snapshotData['daily_created'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -136,6 +142,7 @@ Map<String, dynamic> createUsersRecordData({
   String? favGenre,
   String? birthday,
   String? photoUrl,
+  bool? dailyCreated,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -151,6 +158,7 @@ Map<String, dynamic> createUsersRecordData({
       'fav_genre': favGenre,
       'birthday': birthday,
       'photo_url': photoUrl,
+      'daily_created': dailyCreated,
     }.withoutNulls,
   );
 
@@ -173,7 +181,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.playlistLength == e2?.playlistLength &&
         e1?.favGenre == e2?.favGenre &&
         e1?.birthday == e2?.birthday &&
-        e1?.photoUrl == e2?.photoUrl;
+        e1?.photoUrl == e2?.photoUrl &&
+        e1?.dailyCreated == e2?.dailyCreated;
   }
 
   @override
@@ -189,7 +198,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.playlistLength,
         e?.favGenre,
         e?.birthday,
-        e?.photoUrl
+        e?.photoUrl,
+        e?.dailyCreated
       ]);
 
   @override

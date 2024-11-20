@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'sign_up_model.dart';
 export 'sign_up_model.dart';
 
@@ -62,16 +63,22 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 child: Text(
                   'Sign up',
                   style: FlutterFlowTheme.of(context).headlineLarge.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).headlineLargeFamily,
+                        color: const Color(0xAA480B52),
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).headlineLargeFamily),
                       ),
                 ),
               ),
               Text(
-                'Create your Account',
+                'Create your account',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Inter',
+                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodyMediumFamily),
                     ),
               ),
               Form(
@@ -89,17 +96,27 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         obscureText: false,
                         decoration: InputDecoration(
                           isDense: true,
-                          labelStyle:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
+                          labelStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .labelMediumFamily),
+                              ),
                           hintText: 'Email',
-                          hintStyle:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
+                          hintStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .labelMediumFamily),
+                              ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                               color: Color(0x00000000),
@@ -129,7 +146,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                           filled: true,
-                          fillColor: const Color(0xFFE0ADE5),
+                          fillColor: const Color(0x7F8C52FF),
                           prefixIcon: const Icon(
                             Icons.mail_outline,
                             color: Colors.black,
@@ -137,8 +154,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
                               lineHeight: 2.0,
                             ),
                         maxLines: null,
@@ -156,17 +177,27 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         obscureText: !_model.passwordSignupVisibility,
                         decoration: InputDecoration(
                           isDense: true,
-                          labelStyle:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
+                          labelStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .labelMediumFamily),
+                              ),
                           hintText: 'Password',
-                          hintStyle:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
+                          hintStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .labelMediumFamily),
+                              ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                               color: Color(0x00000000),
@@ -196,9 +227,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                           filled: true,
-                          fillColor: const Color(0xFFE0ADE5),
+                          fillColor: const Color(0x808C52FF),
                           prefixIcon: const Icon(
-                            Icons.menu,
+                            Icons.lock,
                             color: Colors.black,
                             size: 26.0,
                           ),
@@ -217,8 +248,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
                               lineHeight: 2.0,
                             ),
                         cursorColor: FlutterFlowTheme.of(context).primaryText,
@@ -235,17 +270,27 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         obscureText: !_model.confirmPassSignupVisibility,
                         decoration: InputDecoration(
                           isDense: true,
-                          labelStyle:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
+                          labelStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .labelMediumFamily),
+                              ),
                           hintText: 'Confirm Password',
-                          hintStyle:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
+                          hintStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .labelMediumFamily),
+                              ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                               color: Color(0x00000000),
@@ -275,9 +320,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                           filled: true,
-                          fillColor: const Color(0xFFE0ADE5),
+                          fillColor: const Color(0x808C52FF),
                           prefixIcon: const Icon(
-                            Icons.menu,
+                            Icons.lock,
                             color: Colors.black,
                             size: 26.0,
                           ),
@@ -296,8 +341,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
                               lineHeight: 2.0,
                             ),
                         cursorColor: FlutterFlowTheme.of(context).primaryText,
@@ -345,6 +394,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       .update(createUsersRecordData(
                         email: '',
                         createdTime: getCurrentTimestamp,
+                        dailyCreated: true,
                       ));
 
                   logFirebaseEvent('Button_google_analytics_event');
@@ -354,6 +404,45 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   await currentUserReference!.update(createUsersRecordData(
                     email: _model.emailSignupTextController.text,
                   ));
+                  logFirebaseEvent('Button_backend_call');
+
+                  await DailyPlaylistsRecord.collection
+                      .doc()
+                      .set(createDailyPlaylistsRecordData(
+                        dailyUrl: '0',
+                        dailyName: 'Daily 1',
+                        dailyImage:
+                            'gs://csc-305-playlist-generator.appspot.com/daily playlists/AMPL.FY_1.png',
+                        dailyTime: getCurrentTimestamp,
+                        user: currentUserReference,
+                        genre: 'pop',
+                      ));
+                  logFirebaseEvent('Button_backend_call');
+
+                  await DailyPlaylistsRecord.collection
+                      .doc()
+                      .set(createDailyPlaylistsRecordData(
+                        dailyUrl: '0',
+                        dailyName: 'Daily 2',
+                        dailyImage:
+                            'gs://csc-305-playlist-generator.appspot.com/daily playlists/AMPL.FY_1.png',
+                        dailyTime: getCurrentTimestamp,
+                        user: currentUserReference,
+                        genre: 'rock',
+                      ));
+                  logFirebaseEvent('Button_backend_call');
+
+                  await DailyPlaylistsRecord.collection
+                      .doc()
+                      .set(createDailyPlaylistsRecordData(
+                        dailyUrl: '0',
+                        dailyName: 'Daily 3',
+                        dailyImage:
+                            'gs://csc-305-playlist-generator.appspot.com/daily playlists/AMPL.FY_1.png',
+                        dailyTime: getCurrentTimestamp,
+                        user: currentUserReference,
+                        genre: 'country',
+                      ));
                   logFirebaseEvent('Button_navigate_to');
 
                   context.pushNamedAuth('ProfileSetup', context.mounted);
@@ -365,21 +454,36 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   iconPadding:
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: const Color(0xFFA11AB9),
-                  textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                        fontFamily: 'Inter',
+                  color: const Color(0xFF8C52FF),
+                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                        fontFamily:
+                            FlutterFlowTheme.of(context).titleSmallFamily,
+                        color: Colors.white,
+                        fontSize: 21.0,
                         letterSpacing: 0.0,
+                        shadows: [
+                          Shadow(
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            offset: const Offset(2.0, 3.0),
+                            blurRadius: 2.0,
+                          )
+                        ],
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).titleSmallFamily),
                       ),
                   elevation: 0.0,
-                  borderRadius: BorderRadius.circular(24.0),
+                  borderRadius: BorderRadius.circular(20.0),
+                  hoverColor: const Color(0xFF2B2525),
                 ),
               ),
               Text(
                 'or',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Inter',
+                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                       fontSize: 19.0,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodyMediumFamily),
                     ),
               ),
               FFButtonWidget(
@@ -391,8 +495,49 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   if (user == null) {
                     return;
                   }
+                  logFirebaseEvent('Button_backend_call');
+
+                  await currentUserReference!.update(createUsersRecordData(
+                    dailyCreated: true,
+                  ));
                   logFirebaseEvent('Button_google_analytics_event');
                   logFirebaseEvent('StartGoldenPath');
+                  logFirebaseEvent('Button_backend_call');
+
+                  await DailyPlaylistsRecord.collection
+                      .doc()
+                      .set(createDailyPlaylistsRecordData(
+                        dailyUrl: '0',
+                        dailyName: 'Daily 1',
+                        dailyImage:
+                            'gs://csc-305-playlist-generator.appspot.com/daily playlists/AMPL.FY_1.png',
+                        dailyTime: getCurrentTimestamp,
+                        user: currentUserReference,
+                      ));
+                  logFirebaseEvent('Button_backend_call');
+
+                  await DailyPlaylistsRecord.collection
+                      .doc()
+                      .set(createDailyPlaylistsRecordData(
+                        dailyUrl: '0',
+                        dailyName: 'Daily 2',
+                        dailyImage:
+                            'gs://csc-305-playlist-generator.appspot.com/daily playlists/AMPL.FY_1.png',
+                        dailyTime: getCurrentTimestamp,
+                        user: currentUserReference,
+                      ));
+                  logFirebaseEvent('Button_backend_call');
+
+                  await DailyPlaylistsRecord.collection
+                      .doc()
+                      .set(createDailyPlaylistsRecordData(
+                        dailyUrl: '0',
+                        dailyName: 'Daily 3',
+                        dailyImage:
+                            'gs://csc-305-playlist-generator.appspot.com/daily playlists/AMPL.FY_1.png',
+                        dailyTime: getCurrentTimestamp,
+                        user: currentUserReference,
+                      ));
                   logFirebaseEvent('Button_navigate_to');
 
                   context.pushNamedAuth('ProfileSetup', context.mounted);
@@ -406,8 +551,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: Colors.white,
                   textStyle: FlutterFlowTheme.of(context).bodyLarge.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyLargeFamily,
+                        color: const Color(0xFF8C52FF),
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyLargeFamily),
                       ),
                   elevation: 0.0,
                   borderSide: const BorderSide(
@@ -419,8 +568,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
               Text(
                 'Already have an account?',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Inter',
+                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodyMediumFamily),
                     ),
               ),
               InkWell(
@@ -435,10 +586,14 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   context.pushNamed('WelcomeScreen');
                 },
                 child: Text(
-                  'Login',
+                  'Login!',
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodySmallFamily,
+                        color: const Color(0xFF8C52FF),
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodySmallFamily),
                       ),
                 ),
               ),
