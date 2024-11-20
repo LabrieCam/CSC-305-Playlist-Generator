@@ -29,7 +29,7 @@ void main() async {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, this.entryPage});
 
   // This widget is the root of your application.
   @override
@@ -37,6 +37,8 @@ class MyApp extends StatefulWidget {
 
   static _MyAppState of(BuildContext context) =>
       context.findAncestorStateOfType<_MyAppState>()!;
+
+  final Widget? entryPage;
 }
 
 class _MyAppState extends State<MyApp> {
@@ -54,7 +56,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
 
     _appStateNotifier = AppStateNotifier.instance;
-    _router = createRouter(_appStateNotifier);
+    _router = createRouter(_appStateNotifier, widget.entryPage);
     userStream = cSC305PlaylistGeneratorFirebaseUserStream()
       ..listen((user) {
         _appStateNotifier.update(user);
@@ -173,7 +175,7 @@ class _NavBarPageState extends State<NavBarPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  currentIndex == 1 ? Icons.home : Icons.music_note,
+                  currentIndex == 1 ? Icons.music_note : Icons.music_note,
                   color: currentIndex == 1
                       ? FlutterFlowTheme.of(context).primary
                       : FlutterFlowTheme.of(context).secondaryText,

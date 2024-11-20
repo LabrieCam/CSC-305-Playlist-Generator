@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'forgot_pass_email_verify_model.dart';
 export 'forgot_pass_email_verify_model.dart';
 
@@ -71,8 +72,11 @@ class _ForgotPassEmailVerifyWidgetState
                 child: Text(
                   'Email Verification',
                   style: FlutterFlowTheme.of(context).displayMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).displayMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).displayMediumFamily),
                       ),
                 ),
               ),
@@ -82,8 +86,11 @@ class _ForgotPassEmailVerifyWidgetState
                   'Get Your Code',
                   textAlign: TextAlign.start,
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).headlineMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).headlineMediumFamily),
                       ),
                 ),
               ),
@@ -92,8 +99,11 @@ class _ForgotPassEmailVerifyWidgetState
                 child: Text(
                   '     Please enter the 4 digit code that \n        was sent to your email Address.',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                 ),
               ),
@@ -108,17 +118,25 @@ class _ForgotPassEmailVerifyWidgetState
                     obscureText: false,
                     decoration: InputDecoration(
                       isDense: true,
-                      labelStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Inter',
-                                letterSpacing: 0.0,
-                              ),
+                      labelStyle: FlutterFlowTheme.of(context)
+                          .labelMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).labelMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).labelMediumFamily),
+                          ),
                       hintText: 'Code..',
-                      hintStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Inter',
-                                letterSpacing: 0.0,
-                              ),
+                      hintStyle: FlutterFlowTheme.of(context)
+                          .labelMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).labelMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).labelMediumFamily),
+                          ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
                           color: Color(0x00000000),
@@ -151,8 +169,11 @@ class _ForgotPassEmailVerifyWidgetState
                       fillColor: const Color(0xFFE0ADE5),
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Inter',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
                           lineHeight: 2.0,
                         ),
                     textAlign: TextAlign.start,
@@ -168,8 +189,11 @@ class _ForgotPassEmailVerifyWidgetState
                 child: Text(
                   'If you didn\'t received code!  ',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                 ),
               ),
@@ -178,8 +202,11 @@ class _ForgotPassEmailVerifyWidgetState
                 child: Text(
                   'Resend',
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodySmallFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodySmallFamily),
                       ),
                 ),
               ),
@@ -199,8 +226,11 @@ class _ForgotPassEmailVerifyWidgetState
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: const Color(0xFFA11AB9),
                     textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                          fontFamily: 'Inter',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).labelLargeFamily,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).labelLargeFamily),
                         ),
                     elevation: 0.0,
                     borderRadius: BorderRadius.circular(24.0),

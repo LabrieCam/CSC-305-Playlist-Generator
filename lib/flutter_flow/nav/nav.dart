@@ -68,18 +68,21 @@ class AppStateNotifier extends ChangeNotifier {
   }
 }
 
-GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
+GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
+    GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const NavBarPage() : const WelcomeScreenWidget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? entryPage ?? const NavBarPage()
+          : const WelcomeScreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? const NavBarPage() : const WelcomeScreenWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? entryPage ?? const NavBarPage()
+              : const WelcomeScreenWidget(),
         ),
         FFRoute(
           name: 'WelcomeScreen',
@@ -139,6 +142,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? const NavBarPage(initialPage: 'savedPlaylists')
               : const SavedPlaylistsWidget(),
+        ),
+        FFRoute(
+          name: 'seePlaylists',
+          path: '/seePlaylists',
+          builder: (context, params) => const NavBarPage(
+            initialPage: '',
+            page: SeePlaylistsWidget(),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

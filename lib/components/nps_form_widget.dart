@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'nps_form_model.dart';
 export 'nps_form_model.dart';
@@ -73,8 +74,11 @@ class _NpsFormWidgetState extends State<NpsFormWidget> {
                 'How likely are you to recommend our app to a friend or colleague?',
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).headlineSmall.override(
-                      fontFamily: 'Roboto',
+                      fontFamily:
+                          FlutterFlowTheme.of(context).headlineSmallFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).headlineSmallFamily),
                     ),
               ),
               SizedBox(
@@ -108,16 +112,22 @@ class _NpsFormWidgetState extends State<NpsFormWidget> {
                     '1\nNot likely',
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).bodySmall.override(
-                          fontFamily: 'Inter',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodySmallFamily,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodySmallFamily),
                         ),
                   ),
                   Text(
                     '10\nVery likely',
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).bodySmall.override(
-                          fontFamily: 'Inter',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodySmallFamily,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodySmallFamily),
                         ),
                   ),
                 ],
@@ -149,9 +159,12 @@ class _NpsFormWidgetState extends State<NpsFormWidget> {
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).titleSmallFamily,
                         color: FlutterFlowTheme.of(context).info,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).titleSmallFamily),
                       ),
                   elevation: 0.0,
                   borderSide: const BorderSide(

@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'reset_password_model.dart';
 export 'reset_password_model.dart';
 
@@ -81,8 +82,11 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                 child: Text(
                   'Reset Password',
                   style: FlutterFlowTheme.of(context).displayMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).displayMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).displayMediumFamily),
                       ),
                 ),
               ),
@@ -91,8 +95,11 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                 child: Text(
                   'Add a new password',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                 ),
               ),
@@ -116,15 +123,23 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
                                 ),
                             hintText: 'New Password',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelMediumFamily),
                                 ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: const BorderSide(
@@ -170,12 +185,17 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                               ),
                             ),
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                    lineHeight: 2.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
+                                lineHeight: 2.0,
+                              ),
                           cursorColor: FlutterFlowTheme.of(context).primaryText,
                           validator: _model.textController1Validator
                               .asValidator(context),
@@ -195,15 +215,25 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Inter',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .labelMediumFamily),
                                   ),
                               hintText: 'Confirm New Password',
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Inter',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .labelMediumFamily),
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
@@ -252,8 +282,12 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily),
                                   lineHeight: 2.0,
                                 ),
                             cursorColor:
@@ -283,8 +317,11 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: const Color(0xFFA11AB9),
                     textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                          fontFamily: 'Inter',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).labelLargeFamily,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).labelLargeFamily),
                         ),
                     elevation: 0.0,
                     borderRadius: BorderRadius.circular(24.0),

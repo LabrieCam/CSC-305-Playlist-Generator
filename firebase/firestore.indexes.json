@@ -1,3 +1,32 @@
 {
-  "indexes": []
+  "indexes": [
+    {
+      "collectionGroup": "playlist_covers",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "user",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdTime",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "daily_playlists",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "user",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "daily_name",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
 }

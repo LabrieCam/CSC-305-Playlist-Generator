@@ -2,11 +2,19 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'd_select_model.dart';
 export 'd_select_model.dart';
 
 class DSelectWidget extends StatefulWidget {
-  const DSelectWidget({super.key});
+  const DSelectWidget({
+    super.key,
+    required this.playlisturl,
+    required this.playlistName,
+  });
+
+  final String? playlisturl;
+  final String? playlistName;
 
   @override
   State<DSelectWidget> createState() => _DSelectWidgetState();
@@ -67,8 +75,8 @@ class _DSelectWidgetState extends State<DSelectWidget> {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
-              child: Image.network(
-                'https://picsum.photos/seed/727/600',
+              child: Image.asset(
+                'assets/images/AMPL.FY_1.png',
                 width: 200.0,
                 height: 200.0,
                 fit: BoxFit.cover,
@@ -77,18 +85,26 @@ class _DSelectWidgetState extends State<DSelectWidget> {
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
               child: Text(
-                'Playlist Name',
+                valueOrDefault<String>(
+                  widget.playlistName,
+                  'Daily Name',
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Inter',
+                      fontFamily:
+                          FlutterFlowTheme.of(context).headlineMediumFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).headlineMediumFamily),
                     ),
               ),
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('OpenPlaylist pressed ...');
+                onPressed: () async {
+                  logFirebaseEvent('D_SELECT_COMP_OpenPlaylist_ON_TAP');
+                  logFirebaseEvent('OpenPlaylist_launch_u_r_l');
+                  await launchURL(widget.playlisturl!);
                 },
                 text: 'Open Playlist',
                 options: FFButtonOptions(
@@ -99,8 +115,11 @@ class _DSelectWidgetState extends State<DSelectWidget> {
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: const Color(0xFFA11AB9),
                   textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                        fontFamily: 'Inter',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelLargeFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).labelLargeFamily),
                       ),
                   elevation: 0.0,
                   borderRadius: BorderRadius.circular(24.0),
