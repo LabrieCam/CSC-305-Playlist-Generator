@@ -149,7 +149,10 @@ class _PCreateWidgetState extends State<PCreateWidget> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.network(
-                            FFAppState().playlistImage,
+                            valueOrDefault<String>(
+                              FFAppState().playlistImage,
+                              'https://firebasestorage.googleapis.com/v0/b/csc-305-playlist-generator.appspot.com/o/daily%20playlists%2FAMPL.FY_1.png?alt=media&token=710cbbef-ebc9-471e-a263-a1087dc586d1',
+                            ),
                             width: 200.0,
                             height: 200.0,
                             fit: BoxFit.cover,
@@ -233,7 +236,7 @@ class _PCreateWidgetState extends State<PCreateWidget> {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     filled: true,
-                    fillColor: const Color(0xFFE0ADE5),
+                    fillColor: FlutterFlowTheme.of(context).tertiary,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily:
@@ -285,7 +288,7 @@ class _PCreateWidgetState extends State<PCreateWidget> {
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: const Color(0xFFA11AB9),
+                    color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                           fontFamily:
                               FlutterFlowTheme.of(context).labelLargeFamily,

@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'forgot_password_model.dart';
 export 'forgot_password_model.dart';
@@ -43,7 +42,10 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -165,15 +167,10 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           borderRadius: BorderRadius.circular(20.0),
                         ),
                         filled: true,
-                        fillColor: const Color(0xFFE0ADE5),
+                        fillColor: FlutterFlowTheme.of(context).tertiary,
                         prefixIcon: const Icon(
                           Icons.email_outlined,
                           color: Colors.black,
-                          size: 30.0,
-                        ),
-                        suffixIcon: const FaIcon(
-                          key: ValueKey('ForgotPass-Emaill_sv41'),
-                          FontAwesomeIcons.ellipsisV,
                           size: 30.0,
                         ),
                       ),
@@ -200,6 +197,11 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   key: const ValueKey('RecoverPass_zrcs'),
                   onPressed: () async {
                     logFirebaseEvent('FORGOT_PASSWORD_PAGE_RecoverPass_ON_TAP');
+                    logFirebaseEvent('RecoverPass_validate_form');
+                    if (_model.formKey.currentState == null ||
+                        !_model.formKey.currentState!.validate()) {
+                      return;
+                    }
                     logFirebaseEvent('RecoverPass_auth');
                     if (_model.forgotPassEmaillTextController.text.isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -215,6 +217,27 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                       email: _model.forgotPassEmaillTextController.text,
                       context: context,
                     );
+                    logFirebaseEvent('RecoverPass_alert_dialog');
+                    await showDialog(
+                      context: context,
+                      builder: (alertDialogContext) {
+                        return AlertDialog(
+                          title: const Text('Email Sent'),
+                          content: const Text(
+                              'A link to update  your password has been sent to  your  email!'),
+                          actions: [
+                            TextButton(
+                              onPressed: () =>
+                                  Navigator.pop(alertDialogContext),
+                              child: const Text('Ok'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                    logFirebaseEvent('RecoverPass_navigate_to');
+
+                    context.pushNamed('WelcomeScreen');
                   },
                   text: 'Recover Password',
                   options: FFButtonOptions(
@@ -224,7 +247,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: const Color(0xFFA11AB9),
+                    color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                           fontFamily:
                               FlutterFlowTheme.of(context).labelLargeFamily,

@@ -45,20 +45,10 @@ class UsersRecord extends FirestoreRecord {
   bool get explicitAllowed => _explicitAllowed ?? false;
   bool hasExplicitAllowed() => _explicitAllowed != null;
 
-  // "copyright_allowed" field.
-  bool? _copyrightAllowed;
-  bool get copyrightAllowed => _copyrightAllowed ?? false;
-  bool hasCopyrightAllowed() => _copyrightAllowed != null;
-
   // "nps_rating" field.
   double? _npsRating;
   double get npsRating => _npsRating ?? 0.0;
   bool hasNpsRating() => _npsRating != null;
-
-  // "playlist_length" field.
-  String? _playlistLength;
-  String get playlistLength => _playlistLength ?? '';
-  bool hasPlaylistLength() => _playlistLength != null;
 
   // "fav_genre" field.
   String? _favGenre;
@@ -87,9 +77,7 @@ class UsersRecord extends FirestoreRecord {
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
     _explicitAllowed = snapshotData['explicit_allowed'] as bool?;
-    _copyrightAllowed = snapshotData['copyright_allowed'] as bool?;
     _npsRating = castToType<double>(snapshotData['nps_rating']);
-    _playlistLength = snapshotData['playlist_length'] as String?;
     _favGenre = snapshotData['fav_genre'] as String?;
     _birthday = snapshotData['birthday'] as String?;
     _photoUrl = snapshotData['photo_url'] as String?;
@@ -136,9 +124,7 @@ Map<String, dynamic> createUsersRecordData({
   DateTime? createdTime,
   String? phoneNumber,
   bool? explicitAllowed,
-  bool? copyrightAllowed,
   double? npsRating,
-  String? playlistLength,
   String? favGenre,
   String? birthday,
   String? photoUrl,
@@ -152,9 +138,7 @@ Map<String, dynamic> createUsersRecordData({
       'created_time': createdTime,
       'phone_number': phoneNumber,
       'explicit_allowed': explicitAllowed,
-      'copyright_allowed': copyrightAllowed,
       'nps_rating': npsRating,
-      'playlist_length': playlistLength,
       'fav_genre': favGenre,
       'birthday': birthday,
       'photo_url': photoUrl,
@@ -176,9 +160,7 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.createdTime == e2?.createdTime &&
         e1?.phoneNumber == e2?.phoneNumber &&
         e1?.explicitAllowed == e2?.explicitAllowed &&
-        e1?.copyrightAllowed == e2?.copyrightAllowed &&
         e1?.npsRating == e2?.npsRating &&
-        e1?.playlistLength == e2?.playlistLength &&
         e1?.favGenre == e2?.favGenre &&
         e1?.birthday == e2?.birthday &&
         e1?.photoUrl == e2?.photoUrl &&
@@ -193,9 +175,7 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.createdTime,
         e?.phoneNumber,
         e?.explicitAllowed,
-        e?.copyrightAllowed,
         e?.npsRating,
-        e?.playlistLength,
         e?.favGenre,
         e?.birthday,
         e?.photoUrl,

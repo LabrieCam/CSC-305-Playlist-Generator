@@ -88,7 +88,7 @@ class _PSelectWidgetState extends State<PSelectWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
               child: Text(
                 valueOrDefault<String>(
                   widget.playlistName,
@@ -118,7 +118,7 @@ class _PSelectWidgetState extends State<PSelectWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   iconPadding:
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: const Color(0xFFA11AB9),
+                  color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                         fontFamily:
                             FlutterFlowTheme.of(context).labelLargeFamily,

@@ -15,6 +15,8 @@ export 'serialization_util.dart';
 
 const kTransitionInfoKey = '__transition_info__';
 
+GlobalKey<NavigatorState> appNavigatorKey = GlobalKey<NavigatorState>();
+
 class AppStateNotifier extends ChangeNotifier {
   AppStateNotifier._();
 
@@ -73,6 +75,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
+      navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
           ? entryPage ?? const NavBarPage()
           : const WelcomeScreenWidget(),
@@ -127,11 +130,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => const ForgotPasswordWidget(),
         ),
         FFRoute(
-          name: 'ForgotPassEmailVerify',
-          path: '/forgotPassEmailVerify',
-          builder: (context, params) => const ForgotPassEmailVerifyWidget(),
-        ),
-        FFRoute(
           name: 'ResetPassword',
           path: '/resetPassword',
           builder: (context, params) => const ResetPasswordWidget(),
@@ -144,11 +142,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
               : const SavedPlaylistsWidget(),
         ),
         FFRoute(
-          name: 'seePlaylists',
-          path: '/seePlaylists',
+          name: 'allPlaylists',
+          path: '/allPlaylists',
           builder: (context, params) => const NavBarPage(
             initialPage: '',
-            page: SeePlaylistsWidget(),
+            page: AllPlaylistsWidget(),
           ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),

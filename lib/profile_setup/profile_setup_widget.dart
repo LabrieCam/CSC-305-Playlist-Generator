@@ -37,10 +37,8 @@ class _ProfileSetupWidgetState extends State<ProfileSetupWidget> {
         text: valueOrDefault(currentUserDocument?.birthday, ''));
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    _model.switchValue1 =
+    _model.switchValue =
         valueOrDefault<bool>(currentUserDocument?.explicitAllowed, false);
-    _model.switchValue2 =
-        valueOrDefault<bool>(currentUserDocument?.copyrightAllowed, false);
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -54,7 +52,10 @@ class _ProfileSetupWidgetState extends State<ProfileSetupWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -67,17 +68,26 @@ class _ProfileSetupWidgetState extends State<ProfileSetupWidget> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Profile Setup',
-                    style: FlutterFlowTheme.of(context).headlineLarge.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).headlineLargeFamily,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.bold,
-                          useGoogleFonts: GoogleFonts.asMap().containsKey(
-                              FlutterFlowTheme.of(context).headlineLargeFamily),
-                        ),
+                  Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                      child: Text(
+                        'Profile Setup',
+                        style:
+                            FlutterFlowTheme.of(context).headlineLarge.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .headlineLargeFamily,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .headlineLargeFamily),
+                                ),
+                      ),
+                    ),
                   ),
                   Text(
                     'Let\'s personalize your music experience',
@@ -114,6 +124,7 @@ class _ProfileSetupWidgetState extends State<ProfileSetupWidget> {
                             children: [
                               AuthUserStreamWidget(
                                 builder: (context) => TextFormField(
+                                  key: const ValueKey('TextField_amw7'),
                                   controller: _model.textController1,
                                   focusNode: _model.textFieldFocusNode1,
                                   autofocus: false,
@@ -180,6 +191,8 @@ class _ProfileSetupWidgetState extends State<ProfileSetupWidget> {
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .bodyLargeFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
                                         letterSpacing: 0.0,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
@@ -230,9 +243,10 @@ class _ProfileSetupWidgetState extends State<ProfileSetupWidget> {
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          const Icon(
+                                          Icon(
                                             Icons.calendar_today,
-                                            color: Color(0xFFA11AB9),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
                                             size: 24.0,
                                           ),
                                           Expanded(
@@ -335,6 +349,9 @@ class _ProfileSetupWidgetState extends State<ProfileSetupWidget> {
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .bodyLargeFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondary,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -405,9 +422,9 @@ class _ProfileSetupWidgetState extends State<ProfileSetupWidget> {
                                               builder: (context) =>
                                                   FlutterFlowDropDown<String>(
                                                 controller: _model
-                                                        .dropDownValueController1 ??=
+                                                        .dropDownValueController ??=
                                                     FormFieldController<String>(
-                                                  _model.dropDownValue1 ??=
+                                                  _model.dropDownValue ??=
                                                       valueOrDefault(
                                                           currentUserDocument
                                                               ?.favGenre,
@@ -421,7 +438,7 @@ class _ProfileSetupWidgetState extends State<ProfileSetupWidget> {
                                                 ],
                                                 onChanged: (val) =>
                                                     safeSetState(() => _model
-                                                        .dropDownValue1 = val),
+                                                        .dropDownValue = val),
                                                 width:
                                                     MediaQuery.sizeOf(context)
                                                             .width *
@@ -518,104 +535,6 @@ class _ProfileSetupWidgetState extends State<ProfileSetupWidget> {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Playlist Length',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  letterSpacing: 0.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily),
-                                                ),
-                                          ),
-                                          AuthUserStreamWidget(
-                                            builder: (context) =>
-                                                FlutterFlowDropDown<String>(
-                                              controller: _model
-                                                      .dropDownValueController2 ??=
-                                                  FormFieldController<String>(
-                                                _model.dropDownValue2 ??=
-                                                    valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.playlistLength,
-                                                        ''),
-                                              ),
-                                              options: const [
-                                                '1',
-                                                '2',
-                                                '3',
-                                                '4',
-                                                '5',
-                                                '6',
-                                                '7',
-                                                '8',
-                                                '9',
-                                                '10'
-                                              ],
-                                              onChanged: (val) => safeSetState(
-                                                  () => _model.dropDownValue2 =
-                                                      val),
-                                              width: 108.0,
-                                              height: 40.0,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMediumFamily,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily),
-                                                      ),
-                                              hintText: 'Select...',
-                                              icon: Icon(
-                                                Icons
-                                                    .keyboard_arrow_down_rounded,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                size: 24.0,
-                                              ),
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              elevation: 2.0,
-                                              borderColor: Colors.transparent,
-                                              borderWidth: 0.0,
-                                              borderRadius: 8.0,
-                                              margin: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 0.0, 12.0, 0.0),
-                                              hidesUnderline: true,
-                                              isOverButton: false,
-                                              isSearchable: false,
-                                              isMultiSelect: false,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
                                             'Allow Explicit Music',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -638,59 +557,17 @@ class _ProfileSetupWidgetState extends State<ProfileSetupWidget> {
                                           ),
                                           AuthUserStreamWidget(
                                             builder: (context) => Switch(
-                                              value: _model.switchValue1!,
+                                              value: _model.switchValue!,
                                               onChanged: (newValue) async {
                                                 safeSetState(() => _model
-                                                    .switchValue1 = newValue);
+                                                    .switchValue = newValue);
                                               },
-                                              activeColor: const Color(0xFFA11AB9),
-                                              activeTrackColor:
-                                                  const Color(0xFFD89CD8),
-                                              inactiveTrackColor:
+                                              activeColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              inactiveThumbColor:
-                                                  const Color(0xFFE0E0E0),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            'Copyright Free Only',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  letterSpacing: 0.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily),
-                                                ),
-                                          ),
-                                          AuthUserStreamWidget(
-                                            builder: (context) => Switch(
-                                              value: _model.switchValue2!,
-                                              onChanged: (newValue) async {
-                                                safeSetState(() => _model
-                                                    .switchValue2 = newValue);
-                                              },
-                                              activeColor: const Color(0xFFA11AB9),
+                                                      .primary,
                                               activeTrackColor:
-                                                  const Color(0xFFD89CD8),
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiary,
                                               inactiveTrackColor:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
@@ -704,65 +581,105 @@ class _ProfileSetupWidgetState extends State<ProfileSetupWidget> {
                                   ),
                                 ),
                               ),
-                            ].divide(const SizedBox(height: 12.0)),
+                            ].divide(const SizedBox(height: 20.0)),
                           ),
                         ),
                       ),
                     ),
                   ),
-                  FFButtonWidget(
-                    onPressed: () async {
-                      logFirebaseEvent(
-                          'PROFILE_SETUP_UPDATE_PROFILE_BTN_ON_TAP');
-                      logFirebaseEvent('Button_validate_form');
-                      if (_model.formKey.currentState == null ||
-                          !_model.formKey.currentState!.validate()) {
-                        return;
-                      }
-                      if (_model.dropDownValue1 == null) {
-                        return;
-                      }
-                      if (_model.dropDownValue2 == null) {
-                        return;
-                      }
-                      logFirebaseEvent('Button_backend_call');
-
-                      await currentUserReference!.update(createUsersRecordData(
-                        displayName: _model.textController1.text,
-                        explicitAllowed: _model.switchValue1,
-                        copyrightAllowed: _model.switchValue2,
-                        playlistLength: _model.dropDownValue2,
-                        favGenre: _model.dropDownValue1,
-                        birthday: _model.textController2.text,
-                      ));
-                      logFirebaseEvent('Button_navigate_to');
-
-                      context.pushNamed('homepage');
-                    },
-                    text: 'Update Profile',
-                    options: FFButtonOptions(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: 56.0,
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: const Color(0xFFA11AB9),
-                      textStyle: FlutterFlowTheme.of(context)
-                          .titleMedium
-                          .override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).titleMediumFamily,
-                            color: FlutterFlowTheme.of(context).info,
-                            letterSpacing: 0.0,
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context).titleMediumFamily),
-                          ),
-                      elevation: 3.0,
-                      borderRadius: BorderRadius.circular(28.0),
+                  StreamBuilder<List<DailyPlaylistsRecord>>(
+                    stream: queryDailyPlaylistsRecord(
+                      queryBuilder: (dailyPlaylistsRecord) =>
+                          dailyPlaylistsRecord.where(
+                        'daily_name',
+                        isEqualTo: 'Daily 1',
+                      ),
+                      singleRecord: true,
                     ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).primary,
+                              ),
+                            ),
+                          ),
+                        );
+                      }
+                      List<DailyPlaylistsRecord>
+                          buttonDailyPlaylistsRecordList = snapshot.data!;
+                      // Return an empty Container when the item does not exist.
+                      if (snapshot.data!.isEmpty) {
+                        return Container();
+                      }
+                      final buttonDailyPlaylistsRecord =
+                          buttonDailyPlaylistsRecordList.isNotEmpty
+                              ? buttonDailyPlaylistsRecordList.first
+                              : null;
+
+                      return FFButtonWidget(
+                        onPressed: () async {
+                          logFirebaseEvent(
+                              'PROFILE_SETUP_UPDATE_PROFILE_BTN_ON_TAP');
+                          logFirebaseEvent('Button_validate_form');
+                          if (_model.formKey.currentState == null ||
+                              !_model.formKey.currentState!.validate()) {
+                            return;
+                          }
+                          if (_model.dropDownValue == null) {
+                            return;
+                          }
+                          logFirebaseEvent('Button_backend_call');
+
+                          await currentUserReference!
+                              .update(createUsersRecordData(
+                            displayName: _model.textController1.text,
+                            explicitAllowed: _model.switchValue,
+                            favGenre: _model.dropDownValue,
+                            birthday: _model.textController2.text,
+                          ));
+                          logFirebaseEvent('Button_backend_call');
+
+                          await buttonDailyPlaylistsRecord!.reference
+                              .update(createDailyPlaylistsRecordData(
+                            genre: _model.dropDownValue,
+                          ));
+                          logFirebaseEvent('Button_navigate_to');
+
+                          context.pushNamed('homepage');
+                        },
+                        text: 'Update Profile',
+                        options: FFButtonOptions(
+                          width: MediaQuery.sizeOf(context).width * 1.0,
+                          height: 56.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleMediumFamily,
+                                color: FlutterFlowTheme.of(context).info,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleMediumFamily),
+                              ),
+                          elevation: 3.0,
+                          borderRadius: BorderRadius.circular(28.0),
+                        ),
+                      );
+                    },
                   ),
-                ].divide(const SizedBox(height: 16.0)),
+                ].divide(const SizedBox(height: 30.0)),
               ),
             ),
           ),

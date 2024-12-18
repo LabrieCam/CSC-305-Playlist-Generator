@@ -1,8 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'settings_model.dart';
@@ -26,10 +25,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
     _model = createModel(context, () => SettingsModel());
 
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'Settings'});
-    _model.switchValue1 =
+    _model.switchValue =
         valueOrDefault<bool>(currentUserDocument?.explicitAllowed, false);
-    _model.switchValue2 =
-        valueOrDefault<bool>(currentUserDocument?.copyrightAllowed, false);
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -43,7 +40,10 @@ class _SettingsWidgetState extends State<SettingsWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -54,12 +54,11 @@ class _SettingsWidgetState extends State<SettingsWidget> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
-                width: 402.0,
-                height: 781.0,
+                width: double.infinity,
+                height: MediaQuery.sizeOf(context).height * 1.0,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
                   image: DecorationImage(
-                    fit: BoxFit.none,
+                    fit: BoxFit.cover,
                     alignment: const AlignmentDirectional(1.0, 0.0),
                     image: Image.asset(
                       'assets/images/AMP_background2.png',
@@ -148,93 +147,6 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Playlist Length',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                    ),
-                                    AuthUserStreamWidget(
-                                      builder: (context) =>
-                                          FlutterFlowDropDown<String>(
-                                        controller:
-                                            _model.dropDownValueController ??=
-                                                FormFieldController<String>(
-                                          _model.dropDownValue ??=
-                                              valueOrDefault(
-                                                  currentUserDocument
-                                                      ?.playlistLength,
-                                                  ''),
-                                        ),
-                                        options: const [
-                                          '1',
-                                          '2',
-                                          '3',
-                                          '4',
-                                          '5',
-                                          '6',
-                                          '7',
-                                          '8',
-                                          '9',
-                                          '10'
-                                        ],
-                                        onChanged: (val) => safeSetState(
-                                            () => _model.dropDownValue = val),
-                                        width: 108.0,
-                                        height: 40.0,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily),
-                                            ),
-                                        hintText: 'Select...',
-                                        icon: Icon(
-                                          Icons.keyboard_arrow_down_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          size: 24.0,
-                                        ),
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        elevation: 2.0,
-                                        borderColor: Colors.transparent,
-                                        borderWidth: 0.0,
-                                        borderRadius: 8.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
-                                        hidesUnderline: true,
-                                        isOverButton: false,
-                                        isSearchable: false,
-                                        isMultiSelect: false,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
                                       'Allow Explicit Music',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -253,52 +165,39 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     ),
                                     AuthUserStreamWidget(
                                       builder: (context) => Switch(
-                                        value: _model.switchValue1!,
+                                        key: const ValueKey('Switch_g324'),
+                                        value: _model.switchValue!,
                                         onChanged: (newValue) async {
                                           safeSetState(() =>
-                                              _model.switchValue1 = newValue);
+                                              _model.switchValue = newValue);
+                                          if (newValue) {
+                                            logFirebaseEvent(
+                                                'SETTINGS_Switch_xbtsjfns_ON_TOGGLE_ON');
+                                            logFirebaseEvent(
+                                                'Switch_backend_call');
+
+                                            await currentUserReference!
+                                                .update(createUsersRecordData(
+                                              explicitAllowed: true,
+                                            ));
+                                          } else {
+                                            logFirebaseEvent(
+                                                'SETTINGS_Switch_xbtsjfns_ON_TOGGLE_OFF');
+                                            logFirebaseEvent(
+                                                'Switch_backend_call');
+
+                                            await currentUserReference!
+                                                .update(createUsersRecordData(
+                                              explicitAllowed: false,
+                                            ));
+                                          }
                                         },
-                                        activeColor: const Color(0xFFA11AB9),
-                                        activeTrackColor: const Color(0xFFD89CD8),
-                                        inactiveTrackColor:
+                                        activeColor:
                                             FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                        inactiveThumbColor: const Color(0xFFE0E0E0),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Copyright Free Only',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                    ),
-                                    AuthUserStreamWidget(
-                                      builder: (context) => Switch(
-                                        value: _model.switchValue2!,
-                                        onChanged: (newValue) async {
-                                          safeSetState(() =>
-                                              _model.switchValue2 = newValue);
-                                        },
-                                        activeColor: const Color(0xFFA11AB9),
-                                        activeTrackColor: const Color(0xFFD89CD8),
+                                                .primary,
+                                        activeTrackColor:
+                                            FlutterFlowTheme.of(context)
+                                                .tertiary,
                                         inactiveTrackColor:
                                             FlutterFlowTheme.of(context)
                                                 .secondaryText,

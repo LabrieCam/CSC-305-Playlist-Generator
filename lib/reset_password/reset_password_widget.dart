@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -44,7 +45,10 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -170,7 +174,7 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                               borderRadius: BorderRadius.circular(20.0),
                             ),
                             filled: true,
-                            fillColor: const Color(0xFFE0ADE5),
+                            fillColor: FlutterFlowTheme.of(context).tertiary,
                             suffixIcon: InkWell(
                               onTap: () => safeSetState(
                                 () => _model.passwordVisibility1 =
@@ -264,7 +268,7 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
                               filled: true,
-                              fillColor: const Color(0xFFE0ADE5),
+                              fillColor: FlutterFlowTheme.of(context).tertiary,
                               suffixIcon: InkWell(
                                 onTap: () => safeSetState(
                                   () => _model.passwordVisibility2 =
@@ -304,8 +308,40 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
               Align(
                 alignment: const AlignmentDirectional(0.0, 0.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('RecoverPass pressed ...');
+                  onPressed: () async {
+                    logFirebaseEvent('RESET_PASSWORD_PAGE_RecoverPass_ON_TAP');
+                    logFirebaseEvent('RecoverPass_validate_form');
+                    if (_model.formKey.currentState == null ||
+                        !_model.formKey.currentState!.validate()) {
+                      return;
+                    }
+                    logFirebaseEvent('RecoverPass_auth');
+                    await authManager.updatePassword(
+                      newPassword: _model.textController1.text,
+                      context: context,
+                    );
+                    safeSetState(() {});
+
+                    logFirebaseEvent('RecoverPass_alert_dialog');
+                    await showDialog(
+                      context: context,
+                      builder: (alertDialogContext) {
+                        return AlertDialog(
+                          title: const Text('Password Updated'),
+                          content: const Text('Your password has been updated!'),
+                          actions: [
+                            TextButton(
+                              onPressed: () =>
+                                  Navigator.pop(alertDialogContext),
+                              child: const Text('Ok'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                    logFirebaseEvent('RecoverPass_navigate_to');
+
+                    context.pushNamedAuth('Settings', context.mounted);
                   },
                   text: 'Update Password',
                   options: FFButtonOptions(
@@ -315,7 +351,7 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: const Color(0xFFA11AB9),
+                    color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                           fontFamily:
                               FlutterFlowTheme.of(context).labelLargeFamily,

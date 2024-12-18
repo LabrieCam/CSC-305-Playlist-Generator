@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 class GoldenCompleteModel extends FlutterFlowModel<GoldenCompleteWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (getAccessToken)] action in viewPlaylist widget.
+  // Stores action output result for [Backend Call - API (getAccessToken)] action in regPlaylist widget.
   ApiCallResponse? apiResultbyb;
-  // Stores action output result for [Backend Call - API (generatePlaylist)] action in viewPlaylist widget.
-  ApiCallResponse? apiResultyih;
+  // Stores action output result for [Backend Call - API (AIgeneratePlaylist)] action in regPlaylist widget.
+  ApiCallResponse? apiResult6j8;
 
   @override
   void initState(BuildContext context) {}

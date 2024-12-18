@@ -17,6 +17,9 @@ void main() async {
   GoRouter.optionURLReflectsImperativeAPIs = true;
   usePathUrlStrategy();
 
+  final environmentValues = FFDevEnvironmentValues();
+  await environmentValues.initialize();
+
   await initFirebase();
 
   final appState = FFAppState(); // Initialize FFAppState
@@ -161,7 +164,7 @@ class _NavBarPageState extends State<NavBarPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.list,
+                  Icons.queue_music,
                   color: currentIndex == 0
                       ? FlutterFlowTheme.of(context).primary
                       : FlutterFlowTheme.of(context).secondaryText,
@@ -179,7 +182,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   color: currentIndex == 1
                       ? FlutterFlowTheme.of(context).primary
                       : FlutterFlowTheme.of(context).secondaryText,
-                  size: currentIndex == 1 ? 24.0 : 24.0,
+                  size: currentIndex == 1 ? 35.0 : 35.0,
                 ),
               ],
             ),
@@ -189,11 +192,11 @@ class _NavBarPageState extends State<NavBarPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.settings,
+                  currentIndex == 2 ? Icons.settings_outlined : Icons.settings,
                   color: currentIndex == 2
                       ? FlutterFlowTheme.of(context).primary
                       : FlutterFlowTheme.of(context).secondaryText,
-                  size: 24.0,
+                  size: currentIndex == 2 ? 24.0 : 24.0,
                 ),
               ],
             ),
