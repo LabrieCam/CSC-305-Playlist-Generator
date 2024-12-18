@@ -48,50 +48,6 @@
           ]
         }
       }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:138229641045:android:1feda6be39495140c909dc",
-        "android_client_info": {
-          "package_name": "com.mycompany.csc305playlistgeneratordev"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "138229641045-14khk6n4oqlgfbfs1cjvifv0fk06965m.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.mycompany.csc305playlistgeneratordev",
-            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
-          }
-        },
-        {
-          "client_id": "138229641045-8ti1nv8hf6gjdprnedkc12on07gep2cv.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAg1Xepa5k3azUeQu4CTX_eSb2zj4yrWPc"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "138229641045-8ti1nv8hf6gjdprnedkc12on07gep2cv.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "138229641045-itn7ckngpuncuapfos4d1d9gqp2icd9e.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.mycompany.csc305playlistgenerator"
-              }
-            }
-          ]
-        }
-      }
     }
   ],
   "configuration_version": "1"
