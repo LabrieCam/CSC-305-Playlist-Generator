@@ -9,3 +9,5 @@ https://docs.google.com/presentation/d/1Zzn8sxfWH9J7Hv4qCq75x8Doaqfql07X5i6vU-4b
 https://docs.google.com/presentation/d/1VSwxvjy7l9Lwz-ICRiXROQNp59ThkCl_R1lRJujfyRk/edit?usp=sharing - *US4: Playlist Generation*
  
 https://docs.google.com/presentation/d/1vDC0C7Oq-Wn-fUum1XMqnPAQDy6-IJi92RsjYqXAeiM/edit#slide=id.g2d557ef2dce_0_32 - *US5: Playlist Editing*
+
+https://docs.google.com/presentation/d/1W1KhbQi4XnIcxoKb8hvHqIWtoRz-XCNNIQQCvb0A7xI/edit?usp=sharing - *US6: Explicit Content Feature*
