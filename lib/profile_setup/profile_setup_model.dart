@@ -32,15 +32,10 @@ class ProfileSetupModel extends FlutterFlowModel<ProfileSetupWidget> {
   }
 
   // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // State field(s) for Switch widget.
-  bool? switchValue1;
-  // State field(s) for Switch widget.
-  bool? switchValue2;
+  bool? switchValue;
 
   @override
   void initState(BuildContext context) {

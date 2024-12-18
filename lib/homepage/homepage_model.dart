@@ -19,10 +19,10 @@ class HomepageModel extends FlutterFlowModel<HomepageWidget> {
     return null;
   }
 
-  // Stores action output result for [Backend Call - API (getAccessToken)] action in Button widget.
+  // Stores action output result for [Backend Call - API (getAccessToken)] action in generate_button widget.
   ApiCallResponse? apiResultpvd;
-  // Stores action output result for [Backend Call - API (generatePlaylist)] action in Button widget.
-  ApiCallResponse? apiResultxa2;
+  // Stores action output result for [Backend Call - API (AIgeneratePlaylist)] action in generate_button widget.
+  ApiCallResponse? apiResultywx;
 
   @override
   void initState(BuildContext context) {

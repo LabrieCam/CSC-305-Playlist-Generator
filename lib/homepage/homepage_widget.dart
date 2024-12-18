@@ -1,9 +1,12 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'homepage_model.dart';
 export 'homepage_model.dart';
@@ -42,7 +45,10 @@ class _HomepageWidgetState extends State<HomepageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         body: Column(
@@ -50,11 +56,10 @@ class _HomepageWidgetState extends State<HomepageWidget> {
           children: [
             Container(
               width: double.infinity,
-              height: 773.0,
+              height: MediaQuery.sizeOf(context).height * 1.0,
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
                 image: DecorationImage(
-                  fit: BoxFit.fitHeight,
+                  fit: BoxFit.cover,
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   image: Image.asset(
                     'assets/images/AMP_background2.png',
@@ -63,6 +68,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Align(
                     alignment: const AlignmentDirectional(0.0, 0.0),
@@ -77,7 +83,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                             child: Image.asset(
                               'assets/images/AMPL.FY_transparent.png',
                               width: 300.0,
-                              height: 131.0,
+                              height: 139.0,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -91,6 +97,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                             child: SizedBox(
                               width: 300.0,
                               child: TextFormField(
+                                key: const ValueKey('TextField_mbla'),
                                 controller: _model.textController,
                                 focusNode: _model.textFieldFocusNode,
                                 autofocus: false,
@@ -191,40 +198,47 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                 ),
                               );
                             }
-                            List<ApiToolsRecord> buttonApiToolsRecordList =
+                            List<ApiToolsRecord>
+                                generateButtonApiToolsRecordList =
                                 snapshot.data!;
                             // Return an empty Container when the item does not exist.
                             if (snapshot.data!.isEmpty) {
                               return Container();
                             }
-                            final buttonApiToolsRecord =
-                                buttonApiToolsRecordList.isNotEmpty
-                                    ? buttonApiToolsRecordList.first
+                            final generateButtonApiToolsRecord =
+                                generateButtonApiToolsRecordList.isNotEmpty
+                                    ? generateButtonApiToolsRecordList.first
                                     : null;
 
                             return FFButtonWidget(
+                              key: const ValueKey('generate_button_38tj'),
                               onPressed: () async {
                                 logFirebaseEvent(
-                                    'HOMEGENERATE_PLAYLIST_BTN_ON_TAP');
+                                    'HOMEPAGE_PAGE_generate_button_ON_TAP');
+                                var shouldSetState = false;
                                 logFirebaseEvent(
-                                    'Button_google_analytics_event');
+                                    'generate_button_google_analytics_event');
                                 logFirebaseEvent('End Golden Path');
-                                logFirebaseEvent('Button_validate_form');
+                                logFirebaseEvent(
+                                    'generate_button_validate_form');
                                 if (_model.formKey.currentState == null ||
                                     !_model.formKey.currentState!.validate()) {
                                   return;
                                 }
-                                logFirebaseEvent('Button_backend_call');
+                                logFirebaseEvent(
+                                    'generate_button_backend_call');
                                 _model.apiResultpvd =
                                     await GetAccessTokenCall.call(
-                                  refreshToken:
-                                      buttonApiToolsRecord?.spotifyRefresh,
+                                  refreshToken: generateButtonApiToolsRecord
+                                      ?.spotifyRefresh,
                                 );
 
+                                shouldSetState = true;
                                 if ((_model.apiResultpvd?.succeeded ?? true)) {
-                                  logFirebaseEvent('Button_backend_call');
+                                  logFirebaseEvent(
+                                      'generate_button_backend_call');
 
-                                  await buttonApiToolsRecord!.reference
+                                  await generateButtonApiToolsRecord!.reference
                                       .update(createApiToolsRecordData(
                                     spotifyAuth: GetAccessTokenCall.accessToken(
                                       (_model.apiResultpvd?.jsonBody ?? ''),
@@ -232,30 +246,65 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                     authTime: getCurrentTimestamp,
                                   ));
                                 }
-                                logFirebaseEvent('Button_backend_call');
-                                _model.apiResultxa2 =
-                                    await GeneratePlaylistCall.call(
+                                logFirebaseEvent(
+                                    'generate_button_backend_call');
+                                _model.apiResultywx =
+                                    await AIgeneratePlaylistCall.call(
+                                  genreOrMood: _model.textController.text,
                                   accessToken:
-                                      buttonApiToolsRecord?.spotifyAuth,
-                                  genre: _model.textController.text,
+                                      generateButtonApiToolsRecord?.spotifyAuth,
+                                  filterExplicit: !valueOrDefault<bool>(
+                                      currentUserDocument?.explicitAllowed,
+                                      false),
                                 );
 
-                                if ((_model.apiResultxa2?.succeeded ?? true)) {
-                                  logFirebaseEvent('Button_update_app_state');
+                                shouldSetState = true;
+                                if ((_model.apiResultywx?.succeeded ?? true)) {
+                                  logFirebaseEvent(
+                                      'generate_button_update_app_state');
                                   FFAppState().spotifyurl =
-                                      GeneratePlaylistCall.customPlaylist(
-                                    (_model.apiResultxa2?.jsonBody ?? ''),
+                                      AIgeneratePlaylistCall.playlistURL(
+                                    (_model.apiResultywx?.jsonBody ?? ''),
                                   )!;
                                   safeSetState(() {});
+                                } else {
+                                  logFirebaseEvent(
+                                      'generate_button_alert_dialog');
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: const Text('Invalid Genre Entered'),
+                                        content: const Text(
+                                            'An invalid genre has been entered! Please input a new genre.'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: const Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                  logFirebaseEvent(
+                                      'generate_button_clear_text_fields_pin_co');
+                                  safeSetState(() {
+                                    _model.textController?.clear();
+                                  });
+                                  if (shouldSetState) safeSetState(() {});
+                                  return;
                                 }
-                                logFirebaseEvent('Button_update_app_state');
+
+                                logFirebaseEvent(
+                                    'generate_button_update_app_state');
                                 FFAppState().genre = _model.textController.text;
                                 safeSetState(() {});
-                                logFirebaseEvent('Button_navigate_to');
+                                logFirebaseEvent('generate_button_navigate_to');
 
                                 context.pushNamed('goldenComplete');
 
-                                safeSetState(() {});
+                                if (shouldSetState) safeSetState(() {});
                               },
                               text: 'Generate Playlist!',
                               options: FFButtonOptions(
@@ -294,6 +343,36 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                         ),
                       ],
                     ),
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Align(
+                        alignment: const AlignmentDirectional(1.0, 1.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 20.0, 100.0),
+                          child: FlutterFlowIconButton(
+                            borderRadius: 100.0,
+                            buttonSize: 40.0,
+                            fillColor: const Color(0xE3E0E3E7),
+                            icon: FaIcon(
+                              FontAwesomeIcons.music,
+                              color: FlutterFlowTheme.of(context).primary,
+                              size: 15.0,
+                            ),
+                            onPressed: () async {
+                              logFirebaseEvent(
+                                  'HOMEPAGE_PAGE_website_button_ON_TAP');
+                              logFirebaseEvent('website_button_launch_u_r_l');
+                              await launchURL(
+                                  'https://sites.google.com/uri.edu/amplfy');
+                            },
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
